@@ -4,6 +4,6 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_home"
             app:startDestination="@id/firstFragment">
 
-    <fragment android:id="@+id/firstFragment" android:name="com.qing.myjetpack.ui.FirstFragment"
-              android:label="first_fragment" tools:layout="@layout/first_fragment"/>
+    <fragment android:id="@+id/firstFragment" android:name="com.qing.myjetpack.ui.HomeFragment"
+              android:label="first_fragment" tools:layout="@layout/home_fragment"/>
 </navigation>

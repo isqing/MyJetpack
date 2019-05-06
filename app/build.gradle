@@ -56,5 +56,6 @@ dependencies {
     androidTestImplementation deps.espresso.core
     androidTestImplementation deps.espresso.contrib
     androidTestImplementation deps.espresso.intents
+    implementation project(path: ':httputillibray')
 
 }

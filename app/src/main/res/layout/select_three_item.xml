@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" android:orientation="vertical">
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ddd"
+            android:lines="2"
+            android:layout_alignParentTop="true"
+            android:layout_alignRight="@+id/iv_img"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="@dimen/select_margin_t_b" />
+
+    <LinearLayout
+            android:id="@+id/ll"
+            android:layout_below="@+id/tv_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/iv_img_1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="40dp"
+                android:scaleType="fitCenter"/>
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_img_2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:scaleType="fitCenter"/>
+    <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/iv_img_3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="40dp"
+            android:scaleType="fitCenter"/>
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tv_author_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/ll"
+            android:layout_alignRight="@+id/iv_img"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginBottom="2dp"
+            android:layout_marginTop="2dp" />
+
+
+</RelativeLayout>
