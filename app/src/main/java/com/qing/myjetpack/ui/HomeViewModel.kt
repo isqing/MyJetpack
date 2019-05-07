@@ -39,10 +39,5 @@ class HomeViewModel : ViewModel() {
         }
         return homeBean;
     }
-    fun getStr() : MutableLiveData<String>?{
-        if (str==null){
-            str= MutableLiveData<String>();
-        }
-        return  str;
-    }
+
 }

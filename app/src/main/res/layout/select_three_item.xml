@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" android:orientation="vertical">
+                android:layout_height="wrap_content" android:orientation="vertical">
 
     <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="ddd"
-            android:lines="2"
-            android:layout_alignParentTop="true"
+            android:maxLines="2"
             android:layout_alignRight="@+id/iv_img"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="2dp"
@@ -21,23 +20,26 @@
             android:layout_below="@+id/tv_title"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-        <androidx.appcompat.widget.AppCompatImageView
+        <ImageView
                 android:id="@+id/iv_img_1"
                 android:layout_width="0dp"
                 android:layout_weight="1"
                 android:layout_height="40dp"
+                android:src="@mipmap/ic_launcher"
                 android:scaleType="fitCenter"/>
-    <androidx.appcompat.widget.AppCompatImageView
+    <ImageView
             android:id="@+id/iv_img_2"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="40dp"
+            android:src="@mipmap/ic_launcher"
             android:scaleType="fitCenter"/>
-    <androidx.appcompat.widget.AppCompatImageView
+    <ImageView
             android:id="@+id/iv_img_3"
             android:layout_width="0dp"
             android:layout_weight="1"
             android:layout_height="40dp"
+            android:src="@mipmap/ic_launcher"
             android:scaleType="fitCenter"/>
     </LinearLayout>
 
@@ -48,7 +50,6 @@
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/ll"
             android:layout_alignRight="@+id/iv_img"
-            android:layout_alignParentBottom="true"
             android:layout_marginLeft="5dp"
             android:layout_marginRight="2dp"
             android:layout_marginBottom="2dp"

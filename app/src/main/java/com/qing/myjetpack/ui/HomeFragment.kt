@@ -5,15 +5,15 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.qing.myjetpack.R
-import com.qing.myjetpack.bean.HomeBean
-import com.qing.myjetpack.bean.Result
+import com.qing.myjetpack.adpter.HomeAdpter
+import com.qing.myjetpack.bean.Data
+import com.qing.myjetpack.utils.recyclerview.MultiItemTypeAdapter
+import kotlinx.android.synthetic.main.home_fragment.*
 
 class HomeFragment : Fragment() {
 
@@ -22,25 +22,32 @@ class HomeFragment : Fragment() {
     }
 
     private lateinit var viewModel: HomeViewModel
+    var mulAdpter: MultiItemTypeAdapter<Data>? = null;
+    var dataList = ArrayList<Data>();
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view =inflater.inflate(R.layout.home_fragment, container, false)
-        view.findViewById<TextView>(R.id.tv).setOnClickListener(View.OnClickListener {
-//            viewModel.getHomeData()?.value= HomeBean(0,"dddd", null);
+        return inflater.inflate(R.layout.home_fragment, container, false)
+    }
 
-        })
-
-        return view
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        mulAdpter = HomeAdpter(context!!, dataList);
+        rv.layoutManager = LinearLayoutManager(context);
+        rv.setAdapter(mulAdpter);
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
         viewModel.getHomeData()?.observe(this, Observer {
-            Log.i("qing=",it.reason);
+            Log.i("qing=", it.reason);
+            var data=it?.result?.data;
+            dataList.clear();
+            dataList.addAll(data!!);
+            mulAdpter?.notifyDataSetChanged()
         })
         viewModel.requestData();
     }
