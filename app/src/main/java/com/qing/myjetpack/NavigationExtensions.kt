@@ -70,7 +70,6 @@ fun BottomNavigationView.setupWithNavController(
         graphIdToTagMap[graphId] = fragmentTag
 
         // Attach or detach nav host fragment depending on whether it's the selected item.
-        Log.i("qing=selectedItemId",this.selectedItemId.toString()+","+graphId)
         if (this.selectedItemId == graphId) {
             // Update livedata with the selected graph
             selectedNavController.value = navHostFragment.navController
@@ -184,11 +183,8 @@ private fun BottomNavigationView.setupItemReselected(
     fragmentManager: FragmentManager
 ) {
     setOnNavigationItemReselectedListener { item ->
-        Log.i("qing==itemId",item.itemId.toString()+",ppp");
-        Log.i("qing==graphIdToTagMap",graphIdToTagMap.toString()+",ppp");
 
         val newlySelectedItemTag = graphIdToTagMap[item.itemId]
-        Log.i("qing==newlyS",newlySelectedItemTag+",ppp");
         val selectedFragment = fragmentManager.findFragmentByTag(newlySelectedItemTag)
             as NavHostFragment
         val navController = selectedFragment.navController

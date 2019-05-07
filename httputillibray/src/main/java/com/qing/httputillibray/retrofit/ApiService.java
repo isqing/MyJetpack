@@ -14,6 +14,6 @@ import retrofit2.http.QueryMap;
  */
 public interface ApiService {
 
-    @POST("api/static/")
+    @POST("toutiao/index")
     Observable<JsonObject> post(@QueryMap Map<String, Object> params);
 }

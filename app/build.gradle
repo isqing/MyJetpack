@@ -41,8 +41,9 @@ dependencies {
 //    implementation deps.navigation.ui
 
 //lifecycle
+    implementation deps.lifecycle.runtime
     implementation deps.lifecycle.extensions
-    implementation deps.lifecycle.viewmodel_ktx
+    annotationProcessor deps.lifecycle.compiler
 
 
     // Android Testing Support Library's runner and rules

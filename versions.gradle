@@ -84,6 +84,9 @@ lifecycle.extensions = "androidx.lifecycle:lifecycle-extensions:$versions.lifecy
 lifecycle.java8 = "androidx.lifecycle:lifecycle-common-java8:$versions.lifecycle"
 lifecycle.compiler = "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
 lifecycle.viewmodel_ktx = "androidx.lifecycle:lifecycle-viewmodel-ktx:$versions.lifecycle"
+lifecycle.livedata =  "androidx.lifecycle:lifecycle-livedata:$versions.lifecycle"
+lifecycle.reactivestreams =   "androidx.lifecycle:lifecycle-reactivestreams:$versions.lifecycle" // For Kotlin use lifecycle-reactivestreams-ktx
+
 deps.lifecycle = lifecycle
 
 def arch_core = [:]

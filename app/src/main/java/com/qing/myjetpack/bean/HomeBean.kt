@@ -4,14 +4,15 @@ package com.qing.myjetpack.bean
  *create by yqli on 2019/5/5
  */
 
-data class SelectBean(
+data class HomeBean (
     val error_code: Int,
     val reason: String,
-    val result: Result
+    val result: Result?
 )
 
+
 data class Result(
-    val `data`: List<Data>,
+    val `data`: List<Data> ,
     val stat: String
 )
 

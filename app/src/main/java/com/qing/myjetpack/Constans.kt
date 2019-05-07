@@ -5,6 +5,6 @@ package com.qing.myjetpack
  */
 class Constans {
     companion object {
-        const val BASE_URL: String = "http://v.juhe.cn/toutiao/index";
+        const val BASE_URL: String = "http://v.juhe.cn/";
     }
 }
