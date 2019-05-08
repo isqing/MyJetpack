@@ -19,6 +19,7 @@ import com.qing.myjetpack.utils.recyclerview.MultiItemTypeAdapter
 import kotlinx.android.synthetic.main.home_fragment.*
 import androidx.recyclerview.widget.RecyclerView
 import androidx.navigation.fragment.findNavController
+import com.qing.myjetpack.MainActivity
 import com.qing.myjetpack.base.BaseFragment
 
 
@@ -67,7 +68,7 @@ class HomeFragment : BaseFragment() {
     }
 
     private fun navagition(bundle: Bundle) {
-        NavHostFragment.findNavController(this).navigate(R.id.action_firstFragment_to_detailActivity,bundle);
+        NavHostFragment.findNavController(this).navigate(R.id.action_firstFragment_to_detailFragment3,bundle);
 
     }
 
@@ -83,5 +84,29 @@ class HomeFragment : BaseFragment() {
         })
         viewModel.requestData();
     }
+    override fun onResume() {
+        super.onResume()
+        MainActivity.tabs[0]=true;
+        if (MainActivity.tabs.contains(true)) {
+            (activity as MainActivity).showBottomBar()
+        }
+        val b = MainActivity.tabs[0]
+        val b1 = MainActivity.tabs[1]
+        val b2 = MainActivity.tabs[2]
+        Log.i("qing==",b.toString()+","+b1.toString()+","+b2.toString());
 
+    }
+
+    override fun onPause() {
+        super.onPause()
+        MainActivity.tabs[0]=false;
+        if (!MainActivity.tabs.contains(true)) {
+            (activity as MainActivity).hideBottomBar()
+        }
+        val b = MainActivity.tabs[0]
+        val b1 = MainActivity.tabs[1]
+        val b2 = MainActivity.tabs[2]
+        Log.i("qing==",b.toString()+","+b1.toString()+","+b2.toString());
+
+    }
 }

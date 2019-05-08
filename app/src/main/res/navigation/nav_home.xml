@@ -6,8 +6,12 @@
 
     <fragment android:id="@+id/firstFragment" android:name="com.qing.myjetpack.ui.home.HomeFragment"
               android:label="first_fragment" tools:layout="@layout/home_fragment">
-        <action android:id="@+id/action_firstFragment_to_detailActivity" app:destination="@id/detailActivity"/>
+        <action android:id="@+id/action_firstFragment_to_detailFragment3" app:destination="@id/detailFragment3"/>
     </fragment>
-    <activity android:id="@+id/detailActivity" android:name="com.qing.myjetpack.ui.home.DetailActivity"
-              android:label="activity_detail" tools:layout="@layout/activity_detail"/>
+    <fragment android:id="@+id/detailFragment3" android:name="com.qing.myjetpack.ui.home.DetailFragment"
+              android:label="detail_fragment" tools:layout="@layout/detail_fragment">
+        <action android:id="@+id/action_detailFragment3_to_blankFragment" app:destination="@id/blankFragment"/>
+    </fragment>
+    <fragment android:id="@+id/blankFragment" android:name="com.qing.myjetpack.ui.home.BlankFragment"
+              android:label="blank_fragment" tools:layout="@layout/blank_fragment"/>
 </navigation>

@@ -14,10 +14,19 @@ import kotlinx.android.synthetic.main.activity_home.*
 
 class MainActivity : BaseActivity() {
     private var currentNavController: LiveData<NavController>? = null
+    companion object {
+        val tabs = BooleanArray(3)
+
+
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_home)
+        tabs[0]=false;
+        tabs[1]=false;
+        tabs[2]=false;
+
         if (savedInstanceState == null) {
             setupBottomNavigationBar()
         } // Else, need to wait for onRestoreInstanceState
@@ -64,12 +73,12 @@ class MainActivity : BaseActivity() {
         }
     }
     public fun showBottomBar(){
-        if(supportFragmentManager.backStackEntryCount>1)
+        if(bottom_nav!=null)
             bottom_nav.visibility= View.VISIBLE;
     }
     public fun hideBottomBar(){
-        if(supportFragmentManager.backStackEntryCount>1)
-        bottom_nav.visibility= View.GONE;
+        if(bottom_nav!=null)
+            bottom_nav.visibility= View.GONE;
     }
 }
 
