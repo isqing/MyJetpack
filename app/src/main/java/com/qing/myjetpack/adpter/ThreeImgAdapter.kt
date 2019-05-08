@@ -3,7 +3,7 @@ package com.qing.myjetpack.adpter
 import android.content.Context
 import android.text.TextUtils
 import android.widget.ImageView
-//import com.bumptech.glide.Glide
+import com.bumptech.glide.Glide
 import com.qing.myjetpack.R
 import com.qing.myjetpack.bean.Data
 import com.qing.myjetpack.utils.recyclerview.base.ItemViewDelegate
@@ -23,9 +23,9 @@ class ThreeImgAdapter : ItemViewDelegate<Data> {
         var img1 =holder?.getView<ImageView>(R.id.iv_img_1);
         var img2 =holder?.getView<ImageView>(R.id.iv_img_2);
         var img3 =holder?.getView<ImageView>(R.id.iv_img_3);
-//        Glide.with(context!!).load(t?.thumbnail_pic_s).into(img1!!);
-//        Glide.with(context!!).load(t?.thumbnail_pic_s02).into(img2!!);
-//        Glide.with(context!!).load(t?.thumbnail_pic_s03).into(img3!!);
+        Glide.with(context!!).load(t?.thumbnail_pic_s).into(img1!!);
+        Glide.with(context!!).load(t?.thumbnail_pic_s02).into(img2!!);
+        Glide.with(context!!).load(t?.thumbnail_pic_s03).into(img3!!);
 
     }
 

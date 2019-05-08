@@ -8,8 +8,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
 
 import com.qing.myjetpack.R
+import com.qing.myjetpack.base.BaseFragment
 
-class MeFragment : Fragment() {
+class MeFragment : BaseFragment() {
 
     companion object {
         fun newInstance() = MeFragment()

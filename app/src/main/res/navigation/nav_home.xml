@@ -4,6 +4,10 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_home"
             app:startDestination="@id/firstFragment">
 
-    <fragment android:id="@+id/firstFragment" android:name="com.qing.myjetpack.ui.HomeFragment"
-              android:label="first_fragment" tools:layout="@layout/home_fragment"/>
+    <fragment android:id="@+id/firstFragment" android:name="com.qing.myjetpack.ui.home.HomeFragment"
+              android:label="first_fragment" tools:layout="@layout/home_fragment">
+        <action android:id="@+id/action_firstFragment_to_detailActivity" app:destination="@id/detailActivity"/>
+    </fragment>
+    <activity android:id="@+id/detailActivity" android:name="com.qing.myjetpack.ui.home.DetailActivity"
+              android:label="activity_detail" tools:layout="@layout/activity_detail"/>
 </navigation>

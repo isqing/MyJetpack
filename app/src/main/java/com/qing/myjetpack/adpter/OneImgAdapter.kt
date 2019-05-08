@@ -4,6 +4,7 @@ import android.content.Context
 import android.text.TextUtils
 import android.widget.ImageView
 import androidx.appcompat.widget.AppCompatImageView
+import com.bumptech.glide.Glide
 import com.qing.myjetpack.R
 import com.qing.myjetpack.bean.Data
 import com.qing.myjetpack.utils.recyclerview.base.ItemViewDelegate
@@ -21,8 +22,8 @@ class OneImgAdapter : ItemViewDelegate<Data> {
         holder?.setText(R.id.tv_title, t?.title);
         holder?.setText(R.id.tv_author_name, t?.author_name);
         var img =holder?.getView<ImageView>(R.id.iv_img);
-//        Glide.with(context!!).load(t?.thumbnail_pic_s)
-//            .into(img!!);
+        Glide.with(context!!).load(t?.thumbnail_pic_s)
+            .into(img!!);
 
     }
 

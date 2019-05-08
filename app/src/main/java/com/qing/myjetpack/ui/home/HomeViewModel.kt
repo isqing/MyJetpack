@@ -1,7 +1,6 @@
-package com.qing.myjetpack.ui
+package com.qing.myjetpack.ui.home
 
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.qing.httputillibray.callBack.HttpCallBack

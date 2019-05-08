@@ -2,15 +2,17 @@ package com.qing.myjetpack
 
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.qing.myjetpack.base.BaseActivity
 import kotlinx.android.synthetic.main.activity_home.*
 
-class HomeActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
     private var currentNavController: LiveData<NavController>? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -49,7 +51,6 @@ class HomeActivity : AppCompatActivity() {
         })
         currentNavController = controller
     }
-
     override fun onSupportNavigateUp(): Boolean {
         return currentNavController?.value?.navigateUp() ?: false
     }
@@ -61,6 +62,14 @@ class HomeActivity : AppCompatActivity() {
         if (currentNavController?.value?.popBackStack() != true) {
             super.onBackPressed()
         }
+    }
+    public fun showBottomBar(){
+        if(supportFragmentManager.backStackEntryCount>1)
+            bottom_nav.visibility= View.VISIBLE;
+    }
+    public fun hideBottomBar(){
+        if(supportFragmentManager.backStackEntryCount>1)
+        bottom_nav.visibility= View.GONE;
     }
 }
 
